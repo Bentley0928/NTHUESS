@@ -1,4 +1,3 @@
-x = input("adsfsfsafasf :")
+x = float(input(""))
+print(round(0.5*(x+(1000/x)),7))
 
-if x = = "A":
-    print("dsdfs")
