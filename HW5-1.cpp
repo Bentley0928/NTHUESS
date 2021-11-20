@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-/* Write appropriate using statement(s) */
 int Win[100], Lose[100];
 int wins = 0, loses = 0;
 float sums = 0;
@@ -18,7 +16,6 @@ int main()
         Win[i] = 0;
         Lose[i] = 0;
     }
-    // continue game unless user chooses to quit
     for (int i = 0; i < 1000; i++)
     {
         playCraps();
@@ -32,17 +29,11 @@ int main()
     printf("Probability of winning=%f", (float)wins / 1000.);
     return 0;
 
-} // end main
-
-// review cumulative craps statistics
+}
 void reviewStatistics()
 {
-    /* Write a body for reviewStatistics which displays
-      the total number of wins, losses and die rolls recorded 
-      in craps.dat */
 
-} // end function reviewStatistics
-
+}
 // play game
 void playCraps()
 {
@@ -56,14 +47,8 @@ void playCraps()
     int myPoint;
     int rollCount = 0;
     Status gameStatus;
-
-    /* Write statement to create an output file stream */
-
-    // seed random number generator and roll dice
     sum = rollDice();
     rollCount++;
-
-    // check game conditions
     switch (sum)
     {
     case 7:
@@ -78,12 +63,10 @@ void playCraps()
     default:
         gameStatus = CONTINUE;
         myPoint = sum;
-        //cout << "Point is " << myPoint << endl;
         break;
 
-    } // end switch
+    }
 
-    // keep rolling until player matches point or loses
     while (gameStatus == CONTINUE)
     {
         sum = rollDice();
@@ -97,27 +80,21 @@ void playCraps()
             gameStatus = LOST;
         }
 
-    } // end while
-
-    //  display status message and write results to file
+    } 
     if (gameStatus == WON)
     {
         Win[rollCount]++;
         sums += (float)rollCount;
         wins++;
-        /* Write player WIN status and the total number of die 
-         rolls to a file */
 
-    } // end if
+    }
     else
     {
         Lose[rollCount]++;
         sums += (float)rollCount;
         loses++;
-        /* Write player LOSE status and the total number of die 
-         rolls to a file */
-
-    } // end else
+      
+    }
 
 } // end function playCraps
 
@@ -127,15 +104,9 @@ int rollDice()
     int die1;
     int die2;
     int workSum;
-
-    // roll two dice
     die1 = 1 + rand() % 6;
     die2 = 1 + rand() % 6;
-
-    // total and print results
     workSum = die1 + die2;
-    //cout << "Player rolled " << die1 << " + " << die2
-    //<< " = " << workSum << endl;
 
     return workSum;
 
