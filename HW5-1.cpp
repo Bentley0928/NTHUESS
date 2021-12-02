@@ -20,13 +20,14 @@ int main()
     {
         playCraps();
     }
+    printf("Average game length=%f\n", sums / (float)1000);
+    cout << "wins:" << wins << "\nloses:" << loses << endl;
+    printf("Probability of winning=%f", (float)wins / 1000.);
+    cout << endl;
     for (int k = 1; k <= 25; k++)
     {
         printf("%3d games won and %3d games lost on roll %-1d \n", Win[k], Lose[k], k);
     }
-    printf("Average game length=%f\n", sums / (float)1000);
-    cout << "wins:" << wins << "\nloses:" << loses << endl;
-    printf("Probability of winning=%f", (float)wins / 1000.);
     return 0;
 
 }
