@@ -6,7 +6,7 @@ class Consumer:
     def spend(self, x):
         new_wealth=self.wealth-x
         if new_wealth < 0:
-            print("Insufficent funds")
+            print("Insufficient funds")
         else:
             self.wealth = new_wealth
 c1 = Consumer(100)
