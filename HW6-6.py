@@ -21,11 +21,7 @@ abo = np.count_nonzero(y_rand >= f(x_rand))
 pts_below = plt.scatter(x_rand[ind_below], y_rand[ind_below], color = "red", s=8)
 pts_above = plt.scatter(x_rand[ind_above], y_rand[ind_above], color = "green", s=8)
 plt.plot(x, y, color = "blue")
-print("The integral of the ugly function over [0,10] is : ",end="")
+print("N="+str(N)+"\nThe integral of the ugly function over [0,10] is : ",end="")
 print(10*3*(bel/(bel+abo)))
-plt.legend((pts_below, pts_above),
-           ('Pts below the curve', 'Pts above the curve'),
-           loc='lower left',
-           ncol=3,
-           fontsize=8)
+plt.legend((pts_below, pts_above),('Pts below the curve', 'Pts above the curve'),loc='lower left',ncol=3,fontsize=8)
 plt.show()
