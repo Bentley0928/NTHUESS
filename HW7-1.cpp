@@ -43,6 +43,7 @@ void deal( const int wDeck[][ 13 ], const char *wFace[],
    {
        beenused[i]=0;
    }
+   srand(time(NULL));
    while(count<5){
         int tmp=rand()%52;
         if(beenused[tmp]) continue;
